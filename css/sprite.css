@@ -1,0 +1,26 @@
+i.icon {
+  display: inline-block; }
+
+i.icon-big {
+  background-image: url(../img/sprite.png);
+  background-position: 0px 0px;
+  width: 62px;
+  height: 60px; }
+
+i.icon-cash {
+  background-image: url(../img/sprite.png);
+  background-position: 0px -60px;
+  width: 55px;
+  height: 47px; }
+
+i.icon-delivery {
+  background-image: url(../img/sprite.png);
+  background-position: -55px -60px;
+  width: 61px;
+  height: 42px; }
+
+i.icon-price {
+  background-image: url(../img/sprite.png);
+  background-position: -62px 0px;
+  width: 54px;
+  height: 51px; }

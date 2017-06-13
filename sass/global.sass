@@ -1,0 +1,664 @@
+@font-face
+	src: url('../fonts/Futura.ttf')
+	font-family: 'Futura'
+
+$c1: #3d4752
+$c2: #fff
+$c3: #4DB0F3
+$c4: #6BC055
+$c5: #00afdc
+$c6: #5f6d78
+$fz: 16px
+$ff1: 'Open Sans', sans-serif
+$ff2: 'Futura', sans-serif
+$ff3: 'Arial', sans-serif
+
+
+*
+	margin: 0
+	padding: 0
+
+body
+	font: $fz $ff1
+	color: $c1
+	background: $c2
+	box-sizing: border-box
+
+html, body, header, article, aside, main, footer, div, h1, h2, h3, h4, h5, h6, button, .show, .block
+	display: block
+
+.inline-block
+	display: inline-block
+
+meta, script, style, .hidden
+	display: none
+
+
+
+a
+	text-decoration: none
+	color: #126fd6
+
+button, input[type="submit"]
+	cursor: pointer
+
+button, input, textarea
+	display: block
+	outline: none
+	border: none
+	background: none
+	font-family: $ff1
+
+
+textarea
+	resize: none
+
+ul, ol
+	margin: 5px 0 5px 20px
+
+
+
+
+.input
+	box-sizing: border-box
+	width: 100%
+	padding: 17px 20px
+	background: $c2
+	margin-bottom: 18px
+	border-radius: 3px
+	font-size: 14px
+	border: 1px solid #DCDCDC
+	transition: .3s
+	&:focus
+		box-shadow: 0px 0px 23px -5px $c3
+
+
+
+::placeholder
+	color: #a8b2bd
+
+
+.error
+	color: red
+	font-weight: bold
+	margin-bottom: 10px
+	margin-top: -8px
+
+
+.tal
+	text-align: left
+
+.tac
+	text-align: center
+
+.tar
+	text-align: right
+
+.ttc
+	text-transform: capitalize
+
+i.icon
+	display: inline-block
+
+.i, i
+	font-style: italic
+
+.bold, b, strong
+	font-weight: bold
+
+.button, button
+	display: block
+	text-align: center
+	cursor: pointer
+
+.container
+	position: relative
+	max-width: 940px
+	margin: 0 auto
+	padding-left: 10px
+	padding-right: 10px
+
+
+.row, .clearfix
+	&:before, &:after
+		display: table
+		content: ''
+		box-sizing: border-box
+	&:after
+		clear: both
+
+
+
+.w2 > .col
+	width: 50%
+.w3 > .col
+	width: 33.333333333%
+.w4 > .col
+	width: 25%
+.w5 > .col
+	width: 20%
+.w6 > .col
+	width: 16.666666667%
+
+
+.col
+	display: block
+	float: left
+	min-height: 1px
+		
+
+
+
+button#sticks
+	display: none
+	width: 40px
+	height: 40px
+	float: left
+	span
+		display: block
+		position: relative
+		width: 35px
+		height: 4px
+		background: $c2		
+		margin-left: auto
+		margin-right: auto
+		transition: .5s
+		&:nth-of-type(2)
+			margin: 6px auto
+	&.close
+		span
+			&:nth-of-type(1)
+				transform: rotate(135deg)
+			&:nth-of-type(2)
+				display: none
+			&:nth-of-type(3)
+				margin-top: -4px
+				transform: rotate(-135deg)
+
+.popup
+	display: none
+	z-index: 1000
+	position: absolute
+	left: 0
+	top: 0
+	width: 100%
+	height: 100%
+.popup__wrapper
+	z-index: 1002
+	position: relative
+	width: 400px
+	margin-left: auto
+	margin-right: auto
+	margin-top: 70px
+	background: $c2
+	padding: 20px 20px 1px
+	box-sizing: border-box
+	border-radius: 5px
+
+.popup__title
+	text-align: center
+	font-family: $ff2
+	text-transform: uppercase
+	font-size: 30px
+	margin-bottom: 20px
+
+
+
+.popup__close
+	position: absolute
+	background: $c4
+	top: -12.5px
+	right: -12.5px
+	width: 25px
+	height: 25px
+	text-align: center
+	color: $c2
+	border-radius: 1px
+	cursor: pointer
+	transition: .3s
+	&:hover
+		background: $c3
+
+.popup__message
+	display: none
+	text-align: center
+	font-size: 24px
+	padding-bottom: 40px
+
+
+.popup__bg
+	z-index: 1001
+	position: fixed
+	width: 100%
+	height: 100%
+	top: 0
+	left: 0
+	background: rgba(0,0,0,.5)
+
+.bg-gray
+	background: #F4F7F9
+
+.color-blue
+	color: #49b2f7
+
+.color-green
+	color: #6ac249
+
+.color-blue_light
+	color: #a7b1bd
+
+.fz24
+	font-size: 24px
+
+
+.title
+	display: block
+	text-align: center
+	font-family: $ff2
+	text-transform: uppercase
+	color: $c2
+	font-size: 36px
+	background: $c1
+	margin-left: auto
+	margin-right: auto
+	padding: 9px 21px
+
+.button
+	color: $c2
+	text-transform: uppercase
+	transition: .3s
+	&:hover
+		background: $c3
+
+.button_callback
+	font-size: 14px
+	border-radius: 2px
+	line-height: 44px
+	padding-left: 23px
+	padding-right: 23px
+	background: #6BBF54
+
+.button_action
+	font-size: 18px
+	border-radius: 3px
+	line-height: 65px
+	background: #6BC055
+	padding-left: 38px
+	padding-right: 38px
+
+
+
+
+.table
+	text-align: center
+	line-height: 17px
+	width: 100%
+	thead
+		background: #C8D0D7
+	tr
+		border: 1px solid #DCDCDC
+	th
+		font-weight: normal
+		border-right: 1px solid #DCDCDC
+		font-size: 14px
+		&:last-of-type
+			border-right: none
+	td
+		border-right: 1px solid #DCDCDC
+		border-bottom: 1px solid #DCDCDC
+		font-size: 16px
+		&:nth-of-type(1)
+			border-left: 1px solid #DCDCDC
+	th, td
+		padding: 14px 28px
+
+
+
+.panel
+	z-index: 100
+	background: $c1
+	padding-top: 9px
+	padding-bottom: 11px
+	a
+		color: $c2
+
+.panel_fixed
+	position: fixed
+	width: 100%
+	left: 0
+	top: 0
+
+.panel__nav
+	margin-left: 0
+	padding-top: 6px
+
+.panel__nav__item
+	display: inline-block
+	font-size: 15px
+	margin-right: 55px
+
+.panel__nav__link
+	padding-bottom: 5px
+	transition: .3s
+	border-bottom: 1.5px solid transparent
+	&:hover
+		border-bottom: 1.5px solid $c2
+
+
+
+
+
+
+.header
+	padding-top: 104px
+
+.header__logo
+	color: #6ac148
+	font-size: 24px
+	text-transform: uppercase
+	font-family: $ff2
+	font-weight: bold
+
+.header__logo__img
+	float: left
+	margin-right: 25px
+
+
+
+
+.header__contacts
+	padding-bottom: 25px
+.header__contacts__tel
+	color: #6ac148
+	font-size: 29px
+	font-family: $ff2
+
+.header__contacts__time
+	color: #000000
+	font-size: 14px
+
+
+
+.header__title
+	font-family: $ff2
+	text-align: center
+	text-transform: uppercase
+
+.header__title__desc
+	font-size: 18px
+	color: $c5
+	padding-top: 15px
+	padding-bottom: 15px
+
+.header__title__name
+	color: $c2
+	font-size: 30px
+	background: $c3
+	padding-top: 13px
+	padding-bottom: 13px
+
+
+
+.share
+	padding-top: 47px
+	margin-top: -28px
+
+
+.share__img
+	width: 485px
+	margin-bottom: -33px
+	img
+		width: 100%
+		max-width: 485px
+		display: block
+		margin-left: auto
+		margin-right: auto
+
+.share__timer
+
+
+
+.timer
+	color: $c2
+	background: $c3
+	padding: 15px
+	font-weight: bold
+	box-sizing: border-box
+	text-transform: uppercase
+
+.timer__col
+	width: 140px
+
+.timer__name
+	text-align: center
+	padding-bottom: 5px
+
+.timer__num
+	height: 97px
+	font-size: 60px
+	background-image: url("../img/bg/timer-nums.png")
+	background-repeat: no-repeat
+	background-position: center top
+	text-align: center
+	color: #555555
+	font-family: $ff3
+	padding-top: 12px
+	span
+		&:nth-of-type(1)
+			padding-right: 19px
+		&:nth-of-type(2)
+			padding-left: 19px
+
+
+
+.share__content
+	width: 435px
+	padding-left: 35px
+	padding-right: 20px
+	box-sizing: border-box
+
+.share__title
+	color: #49b2f7
+	font-size: 24px
+	padding-top: 5px
+
+.share__text
+	color: #3d4752
+	line-height: 26px
+	margin-top: 20px
+	padding-bottom: 12px
+
+
+.share__button
+	width: 100%
+	margin-bottom: 35px
+
+.share__end
+	color: #3d4752
+
+
+
+
+.why-we
+	padding-top: 100px
+	padding-bottom: 50px
+	text-align: center
+
+
+.why-we__title
+	max-width: 500px
+	margin-bottom: 90px
+
+
+.why-we__icon-wrap
+	width: 130px
+	height: 130px
+	border: 11px solid #E6EBEE
+	border-radius: 50%
+	box-sizing: border-box
+	line-height: 155px
+	margin-left: auto
+	margin-right: auto
+
+
+.why-we__item__title
+	font-size: 18px
+	margin-top: 30px
+	margin-bottom: 10px
+
+
+
+
+.catalog
+	padding-top: 50px
+
+
+
+.catalog__title
+	max-width: 365px
+	margin-bottom: 13px
+
+
+.catalog-item
+	padding-top: 52px
+	padding-bottom: 70px
+	border-bottom: 1px solid #E8E8E8
+	&:last-of-type
+		border-bottom: none
+	&:nth-of-type(odd)
+		.catalog__item__img
+			float: right
+		.catalog__item__text
+			padding-left: 0
+			padding-right: 18px
+
+.catalog__item__content
+	padding: 10px
+	background: #F4F7F9
+	margin-bottom: 28px
+
+.catalog__item__img
+	width: 515px
+	img
+		display: block
+	a
+		&:nth-of-type(1)
+			img
+				max-width: 100%
+				margin-bottom: 10px
+		&:nth-of-type(2), &:nth-of-type(3)
+			margin-right: 10px
+		&:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(4)
+			float: left
+			img
+				max-width: 165px
+
+.catalog__item__text
+	width: 405px
+	padding-left: 18px
+	box-sizing: border-box
+
+.catalog__item__title
+	color: #6ac249
+	font-size: 20px
+	text-transform: uppercase
+	font-weight: bold
+	padding-top: 5px
+	margin-bottom: 15px
+
+.catalog__item__data
+	margin-left: 0
+	font-size: 15px
+	line-height: 18px
+	li
+		list-style: none
+		margin-bottom: 16px
+	a
+		display: inline-block
+		border-bottom: 1px solid #126fd6
+
+
+.catalog__item__table
+	padding: 10px
+	border: 1px solid #DCDCDC
+	margin-bottom: 27px
+	width: 100%
+	box-sizing: border-box
+
+.catalog__share
+	border: 2px solid #4DAFF3
+	border-radius: 3px
+
+.catalog__share__title
+	color: $c2
+	background: $c3
+	text-align: center
+	text-transform: uppercase
+	font-family: $ff2
+	font-size: 18px
+	line-height: 30px
+	padding-top: 15px
+	padding-bottom: 15px
+
+
+.catalog__share__content
+	padding: 17px
+
+
+.catalog__share__timer
+	width: 500px
+	padding-top: 47px
+	padding-bottom: 40px
+
+
+.catalog__form
+	float: right
+
+
+
+.delivery
+	color: $c2
+	text-align: center
+	background: url('../img/bg/delivery.png') no-repeat center top
+	background-size: cover
+	min-height: 350px
+
+.delivery__title
+	font-family: $ff2
+	text-transform: uppercase
+	font-size: 32.5px
+	padding-top: 52px
+	padding-bottom: 50px
+
+.delivery__text
+	font-size: 20px
+	p
+		margin-bottom: 20px
+		&:last-of-type
+			margin-bottom: 0
+
+
+
+
+.footer
+	color: $c2
+	background: $c1
+	padding-top: 40px
+	padding-bottom: 30px
+
+.footer__address
+	.color-blue_light
+		margin-top: 10px
+
+
+.footer__contacts
+	float: right
+	text-align: right
+
+.footer__contacts__tel
+	font-family: $ff2
+	font-size: 29px
+
+.footer__contacts__time
+	color: #a7b1bd
+	font-size: 14px

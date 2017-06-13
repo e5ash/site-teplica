@@ -1,0 +1,89 @@
+
+$big-name: 'big'
+$big-x: 0px
+$big-y: 0px
+$big-offset-x: 0px
+$big-offset-y: 0px
+$big-width: 62px
+$big-height: 60px
+$big-total-width: 116px
+$big-total-height: 107px
+$big-image: '../img/sprite.png'
+$big: (0px, 0px, 0px, 0px, 62px, 60px, 116px, 107px, '../img/sprite.png', 'big', )
+$cash-name: 'cash'
+$cash-x: 0px
+$cash-y: 60px
+$cash-offset-x: 0px
+$cash-offset-y: -60px
+$cash-width: 55px
+$cash-height: 47px
+$cash-total-width: 116px
+$cash-total-height: 107px
+$cash-image: '../img/sprite.png'
+$cash: (0px, 60px, 0px, -60px, 55px, 47px, 116px, 107px, '../img/sprite.png', 'cash', )
+$delivery-name: 'delivery'
+$delivery-x: 55px
+$delivery-y: 60px
+$delivery-offset-x: -55px
+$delivery-offset-y: -60px
+$delivery-width: 61px
+$delivery-height: 42px
+$delivery-total-width: 116px
+$delivery-total-height: 107px
+$delivery-image: '../img/sprite.png'
+$delivery: (55px, 60px, -55px, -60px, 61px, 42px, 116px, 107px, '../img/sprite.png', 'delivery', )
+$price-name: 'price'
+$price-x: 62px
+$price-y: 0px
+$price-offset-x: -62px
+$price-offset-y: 0px
+$price-width: 54px
+$price-height: 51px
+$price-total-width: 116px
+$price-total-height: 107px
+$price-image: '../img/sprite.png'
+$price: (62px, 0px, -62px, 0px, 54px, 51px, 116px, 107px, '../img/sprite.png', 'price', )
+$spritesheet-width: 116px
+$spritesheet-height: 107px
+$spritesheet-image: '../img/sprite.png'
+$spritesheet-sprites: ($big, $cash, $delivery, $price, )
+$spritesheet: (116px, 107px, '../img/sprite.png', $spritesheet-sprites, )
+
+@mixin sprite-width($sprite)
+  width: nth($sprite, 5)
+
+@mixin sprite-height($sprite)
+  height: nth($sprite, 6)
+
+@mixin sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3)
+  $sprite-offset-y: nth($sprite, 4)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+@mixin sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(#{$sprite-image})
+
+@mixin sprite($sprite)
+  @include sprite-image($sprite)
+  @include sprite-position($sprite)
+  @include sprite-width($sprite)
+  @include sprite-height($sprite)
+
+@mixin sprites($sprites)
+  @each $sprite in $sprites
+    $sprite-name: nth($sprite, 10)
+    .#{$sprite-name}
+      @include sprite($sprite)
+
+i.icon
+  display: inline-block
+
+i.icon-big
+  @include sprite($big)
+i.icon-cash
+  @include sprite($cash)
+i.icon-delivery
+  @include sprite($delivery)
+i.icon-price
+  @include sprite($price)
